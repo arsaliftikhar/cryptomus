@@ -69,10 +69,13 @@ if(isset($_POST['submit']))
                   VALUES ('" . $result['uuid'] . "', '" . $result['order_id'] . "', '" . $result['amount'] . "', '" . $result['payer_amount'] . "', '" . $result['payer_currency'] . "', '" . $result['currency'] . "', '" . $result['network'] . "', '" . $result['address'] . "', '" . $result['payment_status'] . "', '" . $result['url'] . "', '".$result['created_at']."', '".$result['updated_at']."')";
             $queryResult = mysqli_query($con,$q);
 
-            echo "<pre>";
-            print_r($result);
-            echo "</pre>";
+            $redirectPaymentUrl = $result['url'];
+            header("location: $redirectPaymentUrl");
+            // echo "<pre>";
+            // print_r($result);
+            // echo "</pre>";
             die();
+
 
         }
         
@@ -100,9 +103,11 @@ if(isset($_POST['submit']))
                   VALUES ('" . $result['uuid'] . "', '" . $result['order_id'] . "', '" . $result['amount'] . "', '" . $result['payer_amount'] . "', '" . $result['payer_currency'] . "', '" . $result['currency'] . "', '" . $result['network'] . "', '" . $result['address'] . "', '" . $result['payment_status'] . "', '" . $result['url'] . "', '".$result['created_at']."', '".$result['updated_at']."')";
             $queryResult = mysqli_query($con,$q);
 
-            echo "<pre>";
-            print_r($result);
-            echo "</pre>";
+            $redirectPaymentUrl = $result['url'];
+            header("location: $redirectPaymentUrl");
+            // echo "<pre>";
+            // print_r($result);
+            // echo "</pre>";
             die();
 
         }
